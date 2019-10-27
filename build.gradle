@@ -1,0 +1,29 @@
+
+plugins {
+    id 'java'
+    id 'application'
+}
+
+sourceCompatibility = JavaVersion.VERSION_12
+targetCompatibility = JavaVersion.VERSION_12
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+}
+
+application {
+    mainClassName = 'org.przybyl.ddj12.App'
+}
+
+compileJava {
+    options.compilerArgs += ["--enable-preview"]
+}
+
+test {
+    jvmArgs '--enable-preview'
+}
+
+run.jvmArgs += ['--enable-preview']
