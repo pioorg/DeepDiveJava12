@@ -31,14 +31,6 @@ package org.przybyl.ddj12;
 import java.util.*;
 import java.util.stream.*;
 
-enum DayOfWeek {
-	MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
-
-	public static Optional<DayOfWeek> fromString(String day) {
-		return Stream.of(DayOfWeek.values()).filter(dow -> dow.name().equalsIgnoreCase(day)).findFirst();
-	}
-}
-
 public class LessonsChecker {
 	public static void main(String[] args) {
 		System.out.println("Hello Java 12!");
@@ -160,5 +152,13 @@ public class LessonsChecker {
 		};
 		System.out.println(String.format("The class of [%s] is [%s].",
 			stuff, stuff.getClass().getCanonicalName()));
+	}
+}
+
+enum DayOfWeek {
+	MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+
+	public static Optional<DayOfWeek> fromString(String day) {
+		return Stream.of(DayOfWeek.values()).filter(dow -> dow.name().equalsIgnoreCase(day)).findFirst();
 	}
 }
